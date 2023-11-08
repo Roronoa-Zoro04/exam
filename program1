@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Assuming laveesh.txt contains one number per line
+
+# Get the total number of lines in the file
+total_lines=$(wc -l < laveesh.txt)
+
+# Display numbers at positions 2 to (n-2)
+if [ "$total_lines" -ge 4 ]; then
+  sed -n '2,'"$((total_lines-2))"'p' laveesh.txt
+else
+  echo "Not enough numbers in the file to display."
